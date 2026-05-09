@@ -110,13 +110,18 @@ Additional small improvements were added throughout the project, including:
 
 # 📸 Screenshots
 
-Add your project screenshots here.
 
-```md
-/screenshots/homepage.png
-/screenshots/listing-page.png
-/screenshots/mobile-view.png
-```
+## Homepage
+![Homepage](./screenshots/homepage.png)
+
+## Listing Page
+![Listing Page](./screenshots/listingpage.png)
+
+## Login Page
+![Login Page](./screenshots/loginpage.png)
+
+## Review & Map section
+![Review & Map section](./screenshots/review&mapsection.png)
 
 ---
 
