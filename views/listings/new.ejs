@@ -1,9 +1,10 @@
 <% layout("/layouts/boilerplate") %>
-<br>
-    <h3>Create a new Listing</h3>
     <br>
+
     <div class="row">
         <div class="col-8 offset-2">
+            <h3>Create a new Listing</h3>
+            <br>
             <form class="needs-validation" action="/listings" method="post" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -37,7 +38,8 @@
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">country</label>
-                        <input name="listing[country]" placeholder="Enter country" type="text" class="form-control" required>
+                        <input name="listing[country]" placeholder="Enter country" type="text" class="form-control"
+                            required>
                         <div class="invalid-feedback">
                             Please enter a valid country name
                         </div>
@@ -46,9 +48,10 @@
 
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input name="listing[location]" placeholder="Enter location" type="text" class="form-control" required>
+                    <input name="listing[location]" placeholder="Enter location" type="text" class="form-control"
+                        required>
                     <div class="invalid-feedback">
-                            Please enter a valid location
+                        Please enter a valid location
                     </div>
                 </div>
 

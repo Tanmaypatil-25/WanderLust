@@ -24,7 +24,7 @@ main()
     .then(() => {
         console.log("Connected to DB");
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log("Database error:- ", err));
 
 async function main() {
     await mongoose.connect(dbUrl);
@@ -52,19 +52,20 @@ store.on("error", (err) => {
     console.log("Error in Mongo session store", err);
 });
 
+
 const sessionOptions = {
-    store,
+    store: store,
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
         expires: Date.now() + 7*24*60*60*1000,
         maxAge: 7*24*60*60*1000,
         httpOnly: true,
+        secure: true,
     },
 
 }
-
 
 
 // Root route
