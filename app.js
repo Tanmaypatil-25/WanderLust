@@ -52,6 +52,7 @@ store.on("error", (err) => {
     console.log("Error in Mongo session store", err);
 });
 
+app.set("trust proxy", 1);
 
 const sessionOptions = {
     store: store,
@@ -62,7 +63,7 @@ const sessionOptions = {
         expires: Date.now() + 7*24*60*60*1000,
         maxAge: 7*24*60*60*1000,
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === "production",
     },
 
 }
@@ -72,6 +73,7 @@ const sessionOptions = {
 app.get("/", (req, res) => {
     res.redirect("/listings")
 })
+
 
 
 app.use(session(sessionOptions));

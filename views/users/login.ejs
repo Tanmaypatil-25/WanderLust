@@ -1,25 +1,113 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="row mt-3">
-    <h1 class="col-6 offset-3">Login to Wanderlust</h1>
-    <div class="col-6 offset-3">
-        <form action="/login" method="post" class="needs-validation" novalidate>
-            <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input name="username" placeholder="Enter Username" id="username" type="text" class="form-control" required>
+    <style>
+        .login-container {
+            min-height: 75vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 2rem 1rem;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 500px;
+
+            background-color: white;
+
+            padding: 2rem;
+
+            border-radius: 1.2rem;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .login-title {
+            text-align: center;
+
+            margin-bottom: 1.8rem;
+
+            font-weight: 700;
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+
+            border-radius: 0.8rem;
+        }
+
+        .login-btn {
+            width: 100%;
+
+            padding: 0.7rem;
+
+            border-radius: 0.8rem;
+
+            font-weight: 600;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .login-card {
+                padding: 1.5rem;
+            }
+
+            .login-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+
+
+    <div class="login-container">
+
+        <div class="login-card">
+
+            <h1 class="login-title">
+                Login to WanderLust
+            </h1>
+
+            <form action="/login" method="post" class="needs-validation" novalidate>
+
+                <div class="mb-3">
+
+                    <label for="username" class="form-label">
+                        Username
+                    </label>
+
+                    <input name="username" placeholder="Enter Username" id="username" type="text" class="form-control"
+                        required>
+
                     <div class="invalid-feedback">
                         Username required
                     </div>
-            </div>
-            <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input name="password" placeholder="Enter Password" id="password" type="password" class="form-control" required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="password" class="form-label">
+                        Password
+                    </label>
+
+                    <input name="password" placeholder="Enter Password" id="password" type="password"
+                        class="form-control" required>
+
                     <div class="invalid-feedback">
                         Password required
                     </div>
-            </div>
-            <button class="btn btn-success">Login</button>
-        </form>
-    </div>
 
-</div>
+                </div>
+
+                <button class="btn btn-success login-btn">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>

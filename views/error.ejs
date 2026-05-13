@@ -1,11 +1,79 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
-    <div class="row mt-3">
-        <div class="alert alert-danger col-6 offset-3" role="alert">
-            <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
+    <style>
+        .error-container {
+            min-height: 70vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 2rem 1rem;
+        }
+
+        .error-card {
+            width: 100%;
+            max-width: 750px;
+
+            border-radius: 1rem;
+
+            padding: 1.5rem;
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .error-stack {
+            margin-top: 1rem;
+
+            max-height: 300px;
+
+            overflow-x: auto;
+            overflow-y: auto;
+
+            background-color: rgba(0, 0, 0, 0.04);
+
+            padding: 1rem;
+
+            border-radius: 0.7rem;
+
+            font-size: 0.9rem;
+
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .error-card {
+                padding: 1rem;
+            }
+
+            .error-stack {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+
+    <div class="error-container">
+
+        <div class="alert alert-danger error-card" role="alert">
+
             <h4 class="alert-heading">
                 <%= err.message %>
             </h4>
-            <p><%= err.stack %></p>
+
+            <hr>
+
+            <% if(process.env.NODE_ENV !=="production" ) { %>
+
+                <div class="error-stack">
+                    <%= err.stack %>
+                </div>
+
+            <% } %>
+
         </div>
+
     </div>
